@@ -3,7 +3,7 @@
 A full-stack web application for managing student records with DSA algorithm implementations. Features persistent data storage, real-time CRUD operations, and algorithmic sorting/searching.
 
 ## 🚀 Live Demo
-🔗 [View Live Project](localhost) *Add URL after deployment*
+🔗 [View Live Project](localhost) *Not Deploying yet*
 
 ## ✨ Features
 
