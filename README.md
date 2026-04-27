@@ -45,7 +45,7 @@ student-record-management/
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/student-record-management.git
+git clone https://github.com/yourusername/Student-Record-Management-System.git
 cd student-record-management/backend
 
 # Install dependencies
