@@ -1,0 +1,278 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    
+}
+:root {
+    --primary: #00ABE4;
+    --depth: #005F82;
+    --soft: #E9F1FA;
+    --white: #FFFFFF;
+        }
+        header {
+            justify-content: end;
+            align-items: end;
+        }
+
+        .nav-container {
+            /*border: 2px solid green;*/
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 5px;
+            margin-top: 15px;
+
+
+
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 1rem;
+            margin-left: auto;
+            align-items: center;
+
+        }
+
+        .nav-menu li {
+            list-style-type: none;
+
+        }
+
+        .nav-link {
+            /*border: 2px solid red;*/
+            text-decoration: none;
+            font-size: 20px;
+            color: var(--primary);
+            padding: 8px 25px;
+            display: inline-block;
+            position: relative;
+            transition: all 0.3s ease;
+
+
+
+
+        }
+
+        .nav-link:hover {
+            color: var(--depth);
+            text-decoration: underline;
+            transform: translateY(-5px);
+
+        }
+
+        .nav-btn {
+            gap: 5px;
+            margin-left: auto;
+            margin-right: 30px;
+            justify-content: center;
+            align-items: center;
+            margin-top: auto;
+            margin-bottom: auto;
+
+        }
+
+        .btn-n {
+            padding: 8px 30px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .nev-text {
+            display: flex;
+
+        }
+
+        .text-name {
+            margin-left: 30px;
+            font-size: 40px;
+
+        }
+
+        #n1 {
+            color: var(--depth);
+        }
+
+        #n2 {
+            color: var(--primary);
+            margin-left: 0px;
+        }
+
+        .signUp-link {
+            text-decoration: none;
+            color: var(--white);
+
+
+        }
+
+        #signUp-btn {
+            background-color: var(--primary);
+            border: 2px solid var(--primary);
+            border-radius: 6px;
+
+        }
+
+        .login-link {
+            text-decoration: none;
+            color: var(--primary);
+
+        }
+
+        #login-btn {
+            border: 2px solid var(--primary);
+            border-radius: 6px;
+        }
+
+        #signUp-btn:hover {
+            background-color: var(--white);
+        }
+
+        #signUp-btn:hover .signUp-link {
+            color: var(--primary);
+        }
+
+        #login-btn:hover {
+            background-color: var(--primary);
+
+        }
+
+        #login-btn:hover .login-link {
+            color: var(--white);
+        }
+
+        @media screen and (max-width: 1024px) {
+            .nav-container {
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .nav-menu {
+                order: 3;
+                width: 100%;
+                justify-content: center;
+            }
+
+            .nav-btn {
+                order: 2;
+            }
+
+            .nav-text {
+                order: 1;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+                padding: 10px;
+            }
+
+            .nav-text {
+                width: 100%;
+                text-align: center;
+            }
+
+            .text-name {
+                font-size: 35px;
+            }
+
+            .nav-menu {
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            .nav-menu li {
+                width: auto;
+            }
+
+            .nav-link {
+                padding: 8px 15px;
+                font-size: 18px;
+            }
+
+            .nav-btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .btn-n {
+                padding: 8px 25px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .nav-menu {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .nav-menu li {
+                width: 100%;
+                text-align: center;
+            }
+
+            .nav-link {
+                width: 100%;
+                padding: 10px;
+            }
+
+            .nav-btn {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn-n {
+                width: 100%;
+            }
+
+            .text-name {
+                font-size: 28px;
+            }
+        }
+
+        /* Optional: Add smooth transitions */
+        .nav-menu,
+        .nav-btn,
+        .nav-text,
+        .nav-link {
+            transition: all 0.3s ease;
+        }
+
+        /* Optional: Add background to header on mobile */
+        @media screen and (max-width: 768px) {
+            header {
+                background-color: var(--white);
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                position: sticky;
+                top: 0;
+                z-index: 100;
+            }
+
+            .nav-container {
+                margin-top: 5px;
+                margin-bottom: 5px;
+            }
+        }
+
+        /* Fix for very small screens */
+        @media screen and (max-width: 320px) {
+            .text-name {
+                font-size: 24px;
+            }
+
+            .nav-link {
+                font-size: 16px;
+                padding: 6px 10px;
+            }
+
+            .btn-n {
+                padding: 6px 20px;
+                font-size: 14px;
+            }
+        }

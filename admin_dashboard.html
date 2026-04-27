@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Student Record Management</title>
+    
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for footer icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/css/dashboard.css">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="nav-container">
+        <div class="nav-text">
+            <span class="text-name" id="n1">SR</span><span class="text-name" id="n2">MS+</span>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="home.html" class="nav-link">Home</a></li>
+            <li><a href="admin_dashboard.html" class="nav-link">Dashboard</a></li>
+            <li><a href="contact2_us.html" class="nav-link">Contact Us</a></li>
+            <li><a href="About_us.html" class="nav-link">About Us</a></li>
+        </ul>
+        <div class="nav-btn">
+            <button class="btn-n" id="signUp-btn"><a class="signUp-link" href="#">SignUp</a></button>
+            <button class="btn-n" id="login-btn"><a class="login-link" href="#">Login</a></button>
+        </div>
+    </div>
+</header>
+
+<main class="dashboard-container">
+    <div class="dashboard-header">
+        <h2 class="header-title">Dashboard</h2>
+        
+        <!-- Hamburger Menu with Quick Sort (CGPA Sorting) -->
+        <div class="hamburger-menu">
+            <button class="menu-btn" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i> Sort by CGPA
+            </button>
+            <div id="menuDropdown" class="menu-content">
+                <a href="#" id="sortAscBtn">
+                    <i class="fas fa-sort-amount-up-alt"></i>  CGPA ↑ (Ascending)
+                </a>
+                <a href="#" id="sortDescBtn">
+                    <i class="fas fa-sort-amount-down"></i> CGPA ↓ (Descending)
+                </a>
+                <div class="divider"></div>
+                <a href="#" id="resetOrderBtn">
+                    <i class="fas fa-sync-alt"></i> Reset to ID Order
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Stats Cards -->
+    <section class="stats-grid">
+        <div class="stat-card">
+            <div class="stat-title">Total Students</div>
+            <div class="stat-value" id="totalStudentsCount">0</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-title">Average Attendance</div>
+            <div class="stat-value">92%</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-title">Active Courses</div>
+            <div class="stat-value">48</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-title">New Enrollments</div>
+            <div class="stat-value">156</div>
+        </div>
+    </section>
+
+    <!-- BINARY SEARCH SECTION (DSA) - Only ID search -->
+    <div class="search-section">
+        <div class="search-controls">
+            <div class="search-group">
+                <label>🔍 Binary Search by Student ID (DSA Implementation)</label>
+                <div class="search-id-group">
+                    <input type="text" id="idSearchInput" placeholder="Enter ID: e.g., STU-003 or 3">
+                    <button id="binarySearchBtn">Search ID</button>
+                </div>
+            </div>
+            <button id="resetSearchBtn" class="btn-reset-search">⟳ Show All</button>
+        </div>
+        <div id="searchMessage" class="search-message">✨ Binary search enabled on sorted student IDs. Enter an ID to find a record.</div>
+    </div>
+
+    <!-- Student Table -->
+    <section class="table-container">
+        <div class="table-header">
+            <h3>Student Records</h3>
+            <button class="btn-add" onclick="openModal()">+ Add Student</button>
+        </div>
+        <div class="table-wrapper">
+            <table id="studentTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Course</th>
+                        <th>CGPA</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    <!-- rows injected via JS -->
+                </tbody>
+            </table>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <section class="footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <h1>Student<br>Record Management<br>System®</h1>
+            </div>
+            <div class="footer-column">
+                <h3>India
+                <p> </p><a href="#">Email : SRMS@makaut.com</a></p>
+                <p>Contact : +91 8956253641</p>
+                <p>NH-12, Haringhata, Nadia, West Bengal, Pin- 741249</p>
+                <a href="https://www.google.com/maps/place/MAKAUT+Main+Gate+(WBUT)/@22.9574381,88.5442965,17z"
+                target="_blank"
+                class="map-link">
+                 Locate us ↗</a>
+                </h3>
+            </div>
+            <div class="footer-right">
+                <h3 class="follow-heading">FOLLOW US -</h3>
+                <div class="follow-links">
+                    <a href="https://facebook.com/facebook" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
+                    <a href="https://instagram.com/instagram" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+                    <a href="https://youtube.com/@youtube" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+                    <a href="https://whatsapp.com/channel/0029VaExampleLink" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</footer>
+
+<!-- Add Student Modal -->
+<div id="studentModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <h3>Add New Student</h3>
+        <form id="addStudentForm">
+            <div class="form-group">
+                <label>Student Name</label>
+                <input type="text" id="stuName" required>
+            </div>
+            <div class="form-group">
+                <label>Course</label>
+                <input type="text" id="stuCourse" required>
+            </div>
+            <div class="form-group">
+                <label>CGPA</label>
+                <input type="number" step="0.1" max="10" id="stuCgpa" required>
+            </div>
+            <div class="form-group">
+                <label>Status</label>
+                <select id="stuStatus">
+                    <option value="Active">Active</option>
+                    <option value="Inactive">Inactive</option>
+                </select>
+            </div>
+            <button type="submit" class="btn-submit">Save Student</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    // ==================== API CONFIGURATION ====================
+    const API_BASE_URL = 'http://localhost:5000/api';
+    
+    // ==================== DATA MODEL ====================
+    let masterStudents = [];
+    let displayStudents = [];
+    let currentSortMode = 'id';
+
+    // Helper: generate ID string from numeric id
+    function formatId(num) {
+        return 'STU-' + String(num).padStart(3, '0');
+    }
+
+    // ==================== API FUNCTIONS ====================
+    async function fetchStudents() {
+    try {
+        console.log("📡 Fetching students from API...");
+        const response = await fetch(`${API_BASE_URL}/students`);
+        console.log("📡 Response status:", response.status);
+        
+        if (!response.ok) throw new Error('Failed to fetch students');
+        masterStudents = await response.json();
+        console.log(" Loaded students:", masterStudents.length);
+        
+        masterStudents.sort((a, b) => a.id - b.id);
+        resetSearch();
+        showMessage(' Data loaded');
+    } catch (error) {
+        console.error(' Error fetching students:', error);
+        showMessage(' Failed to load data from server - using demo data');
+        loadDemoData();
+    }
+}
+
+    async function addStudentToDatabase(studentData) {
+        try {
+            const response = await fetch(`${API_BASE_URL}/students`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(studentData)
+            });
+            
+            if (!response.ok) {
+                const error = await response.json();
+                throw new Error(error.message);
+            }
+            
+            const newStudent = await response.json();
+            showMessage(` Student added successfully: ${newStudent.name}`);
+            await fetchStudents(); // Refresh data
+            return newStudent;
+        } catch (error) {
+            console.error('Error adding student:', error);
+            showMessage(`❌ Failed to add student: ${error.message}`);
+            return null;
+        }
+    }
+
+    async function deleteStudentFromDatabase(studentId) {
+        try {
+            const response = await fetch(`${API_BASE_URL}/students/${studentId}`, {
+                method: 'DELETE'
+            });
+            
+            if (!response.ok) throw new Error('Failed to delete student');
+            
+            showMessage(` Student deleted successfully`);
+            await fetchStudents(); // Refresh data
+            return true;
+        } catch (error) {
+            console.error('Error deleting student:', error);
+            showMessage(`❌ Failed to delete student: ${error.message}`);
+            return false;
+        }
+    }
+
+    // ==================== QUICK SORT ALGORITHM ====================
+    function quickSortByCgpa(arr, low, high, ascending = true) {
+        if (low < high) {
+            let pi = partitionByCgpa(arr, low, high, ascending);
+            quickSortByCgpa(arr, low, pi - 1, ascending);
+            quickSortByCgpa(arr, pi + 1, high, ascending);
+        }
+        return arr;
+    }
+
+    function partitionByCgpa(arr, low, high, ascending) {
+        let pivot = arr[high].cgpa;
+        let i = low - 1;
+        
+        for (let j = low; j < high; j++) {
+            if (ascending) {
+                if (arr[j].cgpa < pivot) {
+                    i++;
+                    [arr[i], arr[j]] = [arr[j], arr[i]];
+                }
+            } else {
+                if (arr[j].cgpa > pivot) {
+                    i++;
+                    [arr[i], arr[j]] = [arr[j], arr[i]];
+                }
+            }
+        }
+        [arr[i + 1], arr[high]] = [arr[high], arr[i + 1]];
+        return i + 1;
+    }
+
+    function sortByCgpa(ascending = true) {
+        if (masterStudents.length === 0) return;
+        let sortedArray = [...masterStudents];
+        quickSortByCgpa(sortedArray, 0, sortedArray.length - 1, ascending);
+        displayStudents = sortedArray;
+        currentSortMode = ascending ? 'cgpa_asc' : 'cgpa_desc';
+        renderTable();
+        const direction = ascending ? 'Ascending ↑' : 'Descending ↓';
+        document.getElementById('searchMessage').innerHTML = ` Quick Sort applied! Students sorted by CGPA ${direction}`;
+    }
+
+    function resetToIdOrder() {
+        displayStudents = [...masterStudents];
+        currentSortMode = 'id';
+        renderTable();
+        document.getElementById('searchMessage').innerHTML = ' Reset to default order (sorted by ID)';
+    }
+
+    // ==================== BINARY SEARCH ALGORITHM ====================
+    function binarySearchById(targetIdNum) {
+        let left = 0;
+        let right = masterStudents.length - 1;
+        while (left <= right) {
+            const mid = Math.floor((left + right) / 2);
+            const midId = masterStudents[mid].id;
+            if (midId === targetIdNum) return mid;
+            else if (midId < targetIdNum) left = mid + 1;
+            else right = mid - 1;
+        }
+        return -1;
+    }
+
+    // ==================== RENDER FUNCTIONS ====================
+    function renderTable() {
+        const tbody = document.getElementById('tableBody');
+        if (!tbody) return;
+        tbody.innerHTML = '';
+        
+        if (displayStudents.length === 0) {
+            const emptyRow = document.createElement('tr');
+            emptyRow.innerHTML = `<td colspan="6" style="text-align:center;">No student records found</td>`;
+            tbody.appendChild(emptyRow);
+        } else {
+            displayStudents.forEach(student => {
+                const row = document.createElement('tr');
+                const statusClass = student.status === 'Active' ? 'active' : 'inactive';
+                row.innerHTML = `
+                    <td>${student.idString}</td>
+                    <td>${escapeHtml(student.name)}</td>
+                    <td>${escapeHtml(student.course)}</td>
+                    <td>${student.cgpa}</td>
+                    <td><span class="status ${statusClass}">${student.status}</span></td>
+                    <td class="action-btns">
+                        <button class="btn-delete" data-id="${student.id}">Delete</button>
+                    </td>
+                `;
+                tbody.appendChild(row);
+            });
+            
+            document.querySelectorAll('.btn-delete').forEach(btn => {
+                btn.addEventListener('click', async (e) => {
+                    const studentId = parseInt(btn.getAttribute('data-id'));
+                    if (confirm('Are you sure you want to delete this student?')) {
+                        await deleteStudentFromDatabase(studentId);
+                    }
+                });
+            });
+        }
+        document.getElementById('totalStudentsCount').innerText = masterStudents.length;
+    }
+
+    function escapeHtml(str) {
+        if (!str) return '';
+        return str.replace(/[&<>]/g, function(m) {
+            if (m === '&') return '&amp;';
+            if (m === '<') return '&lt;';
+            if (m === '>') return '&gt;';
+            return m;
+        });
+    }
+
+    function resetSearch() {
+        if (currentSortMode === 'cgpa_asc') {
+            let sortedArray = [...masterStudents];
+            quickSortByCgpa(sortedArray, 0, sortedArray.length - 1, true);
+            displayStudents = sortedArray;
+        } else if (currentSortMode === 'cgpa_desc') {
+            let sortedArray = [...masterStudents];
+            quickSortByCgpa(sortedArray, 0, sortedArray.length - 1, false);
+            displayStudents = sortedArray;
+        } else {
+            displayStudents = [...masterStudents];
+        }
+        renderTable();
+        document.getElementById('idSearchInput').value = '';
+        document.getElementById('searchMessage').innerHTML = ' Showing all students by ID.';
+    }
+
+    function performBinarySearchById() {
+        let rawId = document.getElementById('idSearchInput').value.trim();
+        if (rawId === '') {
+            document.getElementById('searchMessage').innerHTML = ' Please enter a Student ID';
+            return;
+        }
+        let numericId = null;
+        if (rawId.toUpperCase().startsWith('STU-')) {
+            numericId = parseInt(rawId.substring(4), 10);
+        } else {
+            numericId = parseInt(rawId, 10);
+        }
+        if (isNaN(numericId)) {
+            document.getElementById('searchMessage').innerHTML = ' Invalid ID format';
+            return;
+        }
+        
+        const index = binarySearchById(numericId);
+        if (index !== -1) {
+            const student = masterStudents[index];
+            displayStudents = [student];
+            renderTable();
+            document.getElementById('searchMessage').innerHTML = ` found: ${student.idString} (${student.name})`;
+        } else {
+            displayStudents = [];
+            renderTable();
+            document.getElementById('searchMessage').innerHTML = ` No student found with ID ${rawId}`;
+        }
+    }
+
+    // ==================== ADD STUDENT ====================
+    async function addStudent(name, course, cgpa, status) {
+        const studentData = {
+            name: name.trim(),
+            course: course.trim(),
+            cgpa: parseFloat(cgpa),
+            status: status
+        };
+        await addStudentToDatabase(studentData);
+    }
+
+    // ==================== DEMO DATA FALLBACK ====================
+    function loadDemoData() {
+        masterStudents = [
+            { id: 1, idString: 'STU-001', name: 'Sameer Ali', course: 'Business Administration', cgpa: 9.8, status: 'Active' },
+            { id: 2, idString: 'STU-002', name: 'Nayan Manna', course: 'Information Technology', cgpa: 9.2, status: 'Active' },
+            { id: 3, idString: 'STU-003', name: 'Kabir Singh', course: 'Medical Science', cgpa: 7.9, status: 'Inactive' },
+            { id: 4, idString: 'STU-004', name: 'Arka Chakraborty', course: 'Computer Science', cgpa: 9.4, status: 'Active' },
+            { id: 5, idString: 'STU-005', name: 'Avishek Sarkar', course: 'Data Science', cgpa: 8.9, status: 'Active' }
+        ];
+        masterStudents.sort((a, b) => a.id - b.id);
+        resetSearch();
+        showMessage(' Using demo data (database not connected)');
+    }
+
+    function showMessage(msg) {
+        let msgDiv = document.createElement('div');
+        msgDiv.style.position = 'fixed';
+        msgDiv.style.bottom = '20px';
+        msgDiv.style.right = '20px';
+        msgDiv.style.backgroundColor = 'var(--primary-dark)';
+        msgDiv.style.color = 'white';
+        msgDiv.style.padding = '12px 20px';
+        msgDiv.style.borderRadius = '8px';
+        msgDiv.style.zIndex = '1000';
+        msgDiv.style.fontSize = '14px';
+        msgDiv.style.fontWeight = '500';
+        msgDiv.style.boxShadow = '0 4px 12px rgba(0,0,0,0.2)';
+        msgDiv.innerHTML = msg;
+        document.body.appendChild(msgDiv);
+        setTimeout(() => msgDiv.remove(), 3000);
+    }
+
+    // ==================== UI FUNCTIONS ====================
+    function openModal() {
+        document.getElementById('studentModal').style.display = 'block';
+    }
+    
+    function closeModal() {
+        document.getElementById('studentModal').style.display = 'none';
+    }
+
+    function toggleMenu() {
+        document.getElementById("menuDropdown").classList.toggle("show-menu");
+    }
+
+    // ==================== EVENT LISTENERS ====================
+    function bindEvents() {
+        document.getElementById('binarySearchBtn').addEventListener('click', performBinarySearchById);
+        document.getElementById('resetSearchBtn').addEventListener('click', resetSearch);
+        
+        document.getElementById('sortAscBtn').addEventListener('click', (e) => {
+            e.preventDefault();
+            sortByCgpa(true);
+            toggleMenu();
+        });
+        
+        document.getElementById('sortDescBtn').addEventListener('click', (e) => {
+            e.preventDefault();
+            sortByCgpa(false);
+            toggleMenu();
+        });
+        
+        document.getElementById('resetOrderBtn').addEventListener('click', (e) => {
+            e.preventDefault();
+            resetToIdOrder();
+            toggleMenu();
+        });
+        
+        document.getElementById('idSearchInput').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') performBinarySearchById();
+        });
+        
+        document.getElementById('addStudentForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const name = document.getElementById('stuName').value;
+            const course = document.getElementById('stuCourse').value;
+            const cgpa = document.getElementById('stuCgpa').value;
+            const status = document.getElementById('stuStatus').value;
+            
+            if (!name || !course || !cgpa) {
+                alert('Please fill all fields');
+                return;
+            }
+            const cgpaNum = parseFloat(cgpa);
+            if (isNaN(cgpaNum) || cgpaNum < 0 || cgpaNum > 10) {
+                alert('CGPA must be between 0 and 10');
+                return;
+            }
+            
+            await addStudent(name, course, cgpaNum, status);
+            closeModal();
+            e.target.reset();
+        });
+    }
+
+    // ==================== INITIALIZATION ====================
+    window.onclick = function(event) {
+        let modal = document.getElementById('studentModal');
+        if (event.target == modal) closeModal();
+        
+        if (!event.target.matches('.menu-btn')) {
+            let dropdown = document.getElementById("menuDropdown");
+            if (dropdown && dropdown.classList.contains('show-menu')) {
+                dropdown.classList.remove('show-menu');
+            }
+        }
+    };
+
+    // Start the app
+    fetchStudents();
+    bindEvents();
+</script>
+</body>
+</html>

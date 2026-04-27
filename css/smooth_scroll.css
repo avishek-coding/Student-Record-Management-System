@@ -1,0 +1,49 @@
+ html {
+            scroll-behavior: smooth;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--soft);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--depth);
+        }
+
+        /* Icon Placeholders for Left Side */
+        .loc,
+        .phone,
+        .time {
+            position: relative;
+        }
+
+        .loc h1::before,
+        .phone h1::before,
+        .time h1::before {
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            margin-right: 10px;
+            font-size: 1.3rem;
+        }
+
+        .loc h1::before {
+            content: '\f3c5';
+        }
+
+        .phone h1::before {
+            content: '\f095';
+        }
+
+        .time h1::before {
+            content: '\f017';
+        }

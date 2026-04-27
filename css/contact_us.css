@@ -1,0 +1,473 @@
+*{
+    
+    padding: 0px;
+    box-sizing: border-box;
+    overflow: hidden;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    
+}
+:root {
+    --primary: #00ABE4;
+    --depth: #005F82;
+    --soft: #E9F1FA;
+    --white: #FFFFFF;
+        }
+header{
+    justify-content: end;
+    align-items: end;
+}
+.nav-container{
+    /*border: 2px solid green;*/
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 15px;
+    
+
+    
+}
+.nav-menu{
+    display: flex;
+    gap: 1rem;
+    margin-left: auto;
+    align-items: center;
+    
+}
+.nav-menu li{
+    list-style-type: none;
+    
+}
+.nav-link{
+    /*border: 2px solid red;*/
+    text-decoration: none;
+    font-size: 20px;
+    color: var(--primary);
+    padding:8px 25px;
+    display: inline-block;
+    position: relative;
+    transition: all 0.3s ease;
+    
+    
+    
+    
+}
+.nav-link:hover{
+    color: var(--depth);
+    text-decoration: underline;
+    transform: translateY(-5px);
+    
+}
+.nav-btn{
+    gap: 5px;
+    margin-left: auto;
+    margin-right: 30px;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    
+}
+.btn-n{
+    padding: 8px 30px;
+    transition: all 0.3s ease-in-out;
+}
+.nev-text{
+    display: flex;
+    
+}
+.text-name{
+   margin-left:30px ;
+   font-size: 40px;
+   
+}
+#n1{
+    color: var(--depth);
+}
+#n2{
+    color: var(--primary);
+    margin-left: 0px;
+}
+.signUp-link{
+    text-decoration: none;
+    color: var(--white);
+    
+    
+}
+#signUp-btn{
+    background-color: var(--primary);
+    border: 2px solid var(--primary);
+    border-radius: 6px;
+
+}
+.login-link{
+    text-decoration: none;
+    color: var(--primary);
+    
+}
+#login-btn{
+    border: 2px solid var(--primary);
+    border-radius: 6px;
+}
+#signUp-btn:hover{
+    background-color: var(--white);
+}
+#signUp-btn:hover .signUp-link{
+    color: var(--primary);
+}
+#login-btn:hover{
+    background-color: var(--primary);
+
+}
+#login-btn:hover .login-link{
+    color: var(--white);
+}
+body{
+    color: #00ABE4;
+    background: #E9F1FA;
+    background: radial-gradient(circle, rgba(233, 241, 250, 1) 0%, rgba(156, 185, 230, 1) 100%);
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+/*.left-side{
+    flex: 1; 
+    background-color: #f5f5f5; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-right: 2px solid #ddd; 
+}
+.side-image{
+    width: 100%;
+    height: auto;
+    max-width: 500px; 
+    object-fit: cover;
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.right-side {
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}*/
+hr{
+    margin-right: 60px;
+    width: 900px;
+    height: 3px;
+    background-color: black;
+}
+.container-1{
+   /* border: 2px solid black;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:end;
+    flex-wrap: wrap;
+    
+}
+.heading{
+    /*border: 1px solid red;*/
+    font-size: 6rem;
+    margin:20px 40px;
+    left: 20px;
+    font-weight: 800;
+    text-shadow: 5px 3px 10px #005F82;
+}
+
+
+.para{
+    color: #005F82 ;
+    font-size: 2em;
+    /*border:1px solid green;*/
+    margin:20px 40px;
+    text-align: right;
+     width: auto;
+    
+}
+
+.container-2{
+    /*border: 2px solid black;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items:end;
+    
+}
+.sub-container-2{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.mail-text{
+    font-size: 2rem;
+    text-decoration: none;
+    margin:20px;
+    color: #00ABE4;
+}
+.mail-img{
+    margin-right: 40px;
+    width: 60px;
+     padding: 5px;
+}
+
+.container-3{
+    /*border: 2px solid black;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items:end;
+}
+.sub-container-3{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.location-name{
+   font-size: 2rem;
+    text-decoration: none;
+    margin:20px;
+    color: #00ABE4;
+    
+}
+
+.location-img{
+    margin-right: 40px;
+    width: 65px;
+    padding: 4px;
+}
+.container-4{
+    /*border: 2px solid black;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items:end;
+}
+.sub-container-4{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.web-text{
+    font-size: 2rem;
+    text-decoration: none;
+    margin:20px;
+    color: #00ABE4;
+}
+.web-img{
+    margin-right: 40px;
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+}
+.container-5{
+    /*border: 2px solid black;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items:end;
+}
+.sub-container-5{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.phone-text{
+    font-size: 2rem;
+    text-decoration: none;
+    margin:20px;
+    color: #00ABE4;
+}
+.phone-img{
+    margin-right: 40px;
+    width: 50px;
+    height: 50px;
+     padding: 5px;
+}
+
+.mail-text:hover{
+    color: #005F82;
+    text-decoration: underline;
+}
+.location-name:hover{
+    color: #005F82;
+    text-decoration: underline;
+}
+.web-text:hover{
+    color: #005F82;
+    text-decoration: underline;
+}
+.phone-text:hover{
+    color: #005F82;
+    text-decoration: underline;
+}
+
+/* ===== MEDIA QUERIES ===== */
+
+ @media screen and (max-width: 1200px){
+    body{
+        padding: 1rem;
+    }
+    .heading {
+        font-size: 5rem;
+    }
+    
+    .para {
+        font-size: 1.8rem;
+    }
+
+ }
+ @media screen and (max-width:900px){
+        .container {
+        align-items: center;
+    }
+    
+    hr {
+        width: 600px;
+        margin-right: 30px;
+    }
+    
+    .heading {
+        font-size: 4.5rem;
+        margin: 15px 30px;
+    }
+    
+    .para {
+        font-size: 1.6rem;
+        margin: 15px 30px;
+    }
+    
+    .mail-text, .location-name, .web-text, .phone-text {
+        font-size: 1.8rem;
+        margin: 15px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        overflow: auto;
+    }
+    
+    .container {
+        padding: 20px;
+    }
+    
+    .container-1, .container-2, .container-3, .container-4, .container-5 {
+        align-items: center;
+    }
+    
+    hr {
+        width: 100%;
+        margin-right: 0;
+    }
+    
+    .heading {
+        font-size: 3.5rem;
+        text-align: center;
+        margin: 15px 0;
+    }
+    
+    .para {
+        font-size: 1.4rem;
+        text-align: center;
+        margin: 15px 0;
+    }
+    
+    .sub-container-2, .sub-container-3, .sub-container-4, .sub-container-5 {
+        justify-content: center;
+        width: 100%;
+    }
+    
+    .mail-text, .location-name, .web-text, .phone-text {
+        font-size: 1.5rem;
+        margin: 10px;
+    }
+    
+    .mail-img {
+        width: 50px;
+        margin-right: 20px;
+    }
+    
+    .location-img {
+        width: 55px;
+        margin-right: 20px;
+    }
+    
+    .web-img, .phone-img {
+        width: 45px;
+        height: 45px;
+        margin-right: 20px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .heading {
+        font-size: 2.8rem;
+    }
+    
+    .para {
+        font-size: 1.2rem;
+    }
+    
+    .mail-text, .location-name, .web-text, .phone-text {
+        font-size: 1.2rem;
+        margin: 8px;
+    }
+    
+    .mail-img {
+        width: 40px;
+        margin-right: 15px;
+    }
+    
+    .location-img {
+        width: 45px;
+        margin-right: 15px;
+    }
+    
+    .web-img, .phone-img {
+        width: 35px;
+        height: 35px;
+        margin-right: 15px;
+    }
+    
+    .sub-container-2, .sub-container-3, .sub-container-4, .sub-container-5 {
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+}
+@media screen and (max-width: 400px) {
+    .heading {
+        font-size: 2.2rem;
+    }
+    
+    .para {
+        font-size: 1rem;
+    }
+    
+    .mail-text, .location-name, .web-text, .phone-text {
+        font-size: 1rem;
+    }
+    
+    .mail-img {
+        width: 35px;
+    }
+    
+    .location-img {
+        width: 40px;
+    }
+    
+    .web-img, .phone-img {
+        width: 30px;
+        height: 30px;
+    }
+}

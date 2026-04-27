@@ -1,0 +1,671 @@
+* {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #00ABE4;
+    --depth: #005F82;
+    --soft: #E9F1FA;
+    --white: #FFFFFF;
+}
+
+body {
+    background: #E9F1FA;
+    color: #111;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    min-height: 100vh;
+}
+
+header {
+    justify-content: end;
+    align-items: end;
+}
+
+.nav-container {
+    /*border: 2px solid green;*/
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 15px;
+
+
+
+}
+
+.nav-menu {
+    display: flex;
+    gap: 1rem;
+    margin-left: auto;
+    align-items: center;
+
+}
+
+.nav-menu li {
+    list-style-type: none;
+
+}
+
+.nav-link {
+    /*border: 2px solid red;*/
+    text-decoration: none;
+    font-size: 20px;
+    color: var(--primary);
+    padding: 8px 25px;
+    display: inline-block;
+    position: relative;
+    transition: all 0.3s ease;
+
+
+
+
+}
+
+.nav-link:hover {
+    color: var(--depth);
+    text-decoration: underline;
+    transform: translateY(-5px);
+
+}
+
+.nav-btn {
+    gap: 5px;
+    margin-left: auto;
+    margin-right: 30px;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+    margin-bottom: auto;
+
+}
+
+.btn-n {
+    padding: 8px 30px;
+    transition: all 0.3s ease-in-out;
+}
+
+.nev-text {
+    display: flex;
+
+}
+
+.text-name {
+    margin-left: 30px;
+    font-size: 40px;
+
+}
+
+#n1 {
+    color: var(--depth);
+}
+
+#n2 {
+    color: var(--primary);
+    margin-left: 0px;
+}
+
+.signUp-link {
+    text-decoration: none;
+    color: var(--white);
+
+
+}
+
+#signUp-btn {
+    background-color: var(--primary);
+    border: 2px solid var(--primary);
+    border-radius: 6px;
+
+}
+
+.login-link {
+    text-decoration: none;
+    color: var(--primary);
+
+}
+
+#login-btn {
+    border: 2px solid var(--primary);
+    border-radius: 6px;
+}
+
+#signUp-btn:hover {
+    background-color: var(--white);
+}
+
+#signUp-btn:hover .signUp-link {
+    color: var(--primary);
+}
+
+#login-btn:hover {
+    background-color: var(--primary);
+
+}
+
+#login-btn:hover .login-link {
+    color: var(--white);
+}
+
+@media screen and (max-width: 1024px) {
+    .nav-container {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .nav-menu {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .nav-btn {
+        order: 2;
+    }
+
+    .nav-text {
+        order: 1;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .nav-text {
+        width: 100%;
+        text-align: center;
+    }
+
+    .text-name {
+        font-size: 35px;
+    }
+
+    .nav-menu {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .nav-menu li {
+        width: auto;
+    }
+
+    .nav-link {
+        padding: 8px 15px;
+        font-size: 18px;
+    }
+
+    .nav-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .btn-n {
+        padding: 8px 25px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .nav-menu {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-menu li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-link {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .nav-btn {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn-n {
+        width: 100%;
+    }
+
+    .text-name {
+        font-size: 28px;
+    }
+}
+
+/* Optional: Add smooth transitions */
+.nav-menu,
+.nav-btn,
+.nav-text,
+.nav-link {
+    transition: all 0.3s ease;
+}
+
+/* Optional: Add background to header on mobile */
+@media screen and (max-width: 768px) {
+    header {
+        background-color: var(--white);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+
+    .nav-container {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+}
+
+/* Fix for very small screens */
+@media screen and (max-width: 320px) {
+    .text-name {
+        font-size: 24px;
+    }
+
+    .nav-link {
+        font-size: 16px;
+        padding: 6px 10px;
+    }
+
+    .btn-n {
+        padding: 6px 20px;
+        font-size: 14px;
+    }
+}
+
+/* About Hero Section */
+.hero {
+    text-align: center;
+    padding: 80px 20px 60px;
+}
+
+.about-text {
+    letter-spacing: 4px;
+    font-size: 2rem;
+    color: #005F82;
+    margin-bottom: 15px;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+}
+
+/* Cards Section Container */
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px 50px 80px;
+    perspective: 800px;
+    /* creates 3D space for children */
+}
+
+/* ===== FLIP CARD CONTAINER ===== */
+/* Each card becomes a 3D flip container */
+.flip-card {
+    width: 250px;
+    height: 360px;
+    /* fixed height to match original card look */
+    cursor: pointer;
+    background: transparent;
+    perspective: 1500px;
+    /* depth for 3D rotation */
+}
+
+/* Inner wrapper that performs the 3D rotation */
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+    transform-style: preserve-3d;
+    border-radius: 15px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2), -2px -2px 8px rgba(0, 0, 0, 0.02);
+}
+
+/* Hover effect: rotate Y 180deg */
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Front & Back panels - absolute positioning to overlap */
+.flip-front,
+.flip-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    /* hides back side when facing away */
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+/* FRONT SIDE - same as original .card style */
+.flip-front {
+    background: var(--primary);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    box-sizing: border-box;
+    transform: rotateY(0deg);
+}
+
+/* Front image styling */
+.flip-front img {
+    width: 100%;
+    height: 70%;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+.flip-front h3 {
+    margin: 10px 0 5px;
+    font-size: 1.5rem;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 600;
+    color: white;
+    letter-spacing: 0.5px;
+}
+
+.flip-front .name {
+    font-size: 1rem;
+    color: #f1f1f1;
+    line-height: 1.4;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    margin-top: 4px;
+}
+
+/* BACK SIDE - rotating card back (flip effect) */
+.flip-back {
+    background: linear-gradient(145deg, #005F82, #00ABE4);
+    transform: rotateY(180deg);
+    padding: 25px 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    box-sizing: border-box;
+    box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.2), 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.flip-back h4 {
+    font-size: 1.6rem;
+    margin-bottom: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+    display: inline-block;
+    padding-bottom: 6px;
+}
+
+.flip-back .role-desc {
+    font-size: 0.9rem;
+    margin: 15px 0;
+    line-height: 1.5;
+    font-weight: 400;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 8px 12px;
+    border-radius: 40px;
+}
+
+.flip-back .quote {
+    font-size: 0.85rem;
+    font-style: italic;
+    margin-top: 15px;
+    opacity: 0.9;
+}
+
+.flip-back .back-icon {
+    font-size: 2.2rem;
+    margin-bottom: 12px;
+}
+
+/* preserve original hover lift? but we keep 3d flip - to maintain design we avoid transform on inner, but allow slight scale? */
+/* to match original card vibe, add subtle scaling to entire flip-card on hover? adds polish */
+.flip-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    transition: transform 0.3s ease;
+}
+
+.flip-card {
+    transition: transform 0.3s ease;
+}
+
+/*footer*/
+.footer {
+    background-color: #005F82;
+    color: #fff;
+    padding: 80px 60px;
+}
+
+/*container alignment8*/
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 60px;
+}
+
+
+.footer-column p {
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #ccc;
+}
+
+.footer-column a {
+    color: #fff;
+    text-decoration: underline;
+    font-size: 14px;
+}
+
+
+
+.follow-heading {
+    margin-top: 0;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.follow-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.follow-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s ease;
+}
+
+.follow-links a:hover {
+    opacity: 0.7;
+    transform: translateX(5px);
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .cards {
+        gap: 25px;
+        padding: 30px 20px;
+    }
+
+    .flip-card {
+        width: 240px;
+        height: 350px;
+    }
+
+    .nav-container {
+        flex-wrap: wrap;
+        padding: 0 15px;
+    }
+
+    .nav-menu {
+        margin-left: 0;
+        order: 3;
+        justify-content: center;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .nav-btn {
+        margin-right: 15px;
+    }
+
+    .text-name {
+        margin-left: 15px;
+        font-size: 32px;
+    }
+
+    .about-text {
+        font-size: 1.8rem;
+    }
+}
+
+/* Additional polish for text on front */
+.flip-front .name {
+    font-weight: 500;
+    font-size: 1rem;
+    background: rgba(0, 0, 0, 0.1);
+    padding: 4px 8px;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+/* ensure any residual card styling does not conflict */
+.cards {
+    perspective-origin: center;
+}
+
+.flip-front img {
+    object-fit: cover;
+    width: 100%;
+    height: 160px;
+    object-position: top center;
+}
+
+/* adjusting image container height proportion */
+.flip-front {
+    justify-content: flex-start;
+}
+
+.flip-front h3 {
+    margin-top: 8px;
+    font-size: 1.35rem;
+}
+
+.flip-front .name {
+    font-size: 0.95rem;
+    font-weight: 500;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 4px 12px;
+    border-radius: 40px;
+    margin-top: 5px;
+}
+
+/* consistent height for all cards based on original visual */
+.flip-card {
+    height: 370px;
+}
+
+@media (max-width: 550px) {
+    .flip-card {
+        height: 350px;
+        width: 220px;
+    }
+
+    .flip-front img {
+        height: 140px;
+    }
+}
+
+/* added smooth corner and depth */
+.flip-back {
+    background: linear-gradient(135deg, #0077a3, #00ABE4);
+    backdrop-filter: blur(0px);
+}
+
+.flip-back h4 {
+    font-size: 1.5rem;
+}
+
+
+
+/* Custom Scrollbar */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--soft);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--depth);
+}
+
+/* Icon Placeholders for Left Side */
+.loc,
+.phone,
+.time {
+    position: relative;
+}
+
+.loc h1::before,
+.phone h1::before,
+.time h1::before {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    margin-right: 10px;
+    font-size: 1.3rem;
+}
+
+.loc h1::before {
+    content: '\f3c5';
+}
+
+.phone h1::before {
+    content: '\f095';
+}
+
+.time h1::before {
+    content: '\f017';
+}

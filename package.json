@@ -1,0 +1,24 @@
+{
+  "name": "student_record_management_system",
+  "version": "1.0.0",
+  "description": "THIS WILL HANDLE THE STUDENT RECORD",
+  "keywords": [
+    "srms"
+  ],
+  "license": "ISC",
+  "author": "AVISHEK SARKAR",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  },
+  "dependencies": {
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "mongoose": "^9.3.3"
+  }
+}

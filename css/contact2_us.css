@@ -1,0 +1,791 @@
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #00ABE4;
+            --depth: #005F82;
+            --soft: #E9F1FA;
+            --white: #FFFFFF;
+        }
+
+        header {
+            justify-content: end;
+            align-items: end;
+             font-family: "Ubuntu", sans-serif;
+        }
+
+        .nav-container {
+            /*border: 2px solid green;*/
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 5px;
+            margin-top: 15px;
+
+
+
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 1rem;
+            margin-left: auto;
+            align-items: center;
+
+        }
+
+        .nav-menu li {
+            list-style-type: none;
+
+        }
+
+        .nav-link {
+            /*border: 2px solid red;*/
+            text-decoration: none;
+            font-size: 20px;
+            color: var(--primary);
+            padding: 8px 25px;
+            display: inline-block;
+            position: relative;
+            transition: all 0.3s ease;
+
+
+
+
+        }
+
+        .nav-link:hover {
+            color: var(--depth);
+            text-decoration: underline;
+            transform: translateY(-5px);
+
+        }
+
+        .nav-btn {
+            gap: 5px;
+            margin-left: auto;
+            margin-right: 30px;
+            justify-content: center;
+            align-items: center;
+            margin-top: auto;
+            margin-bottom: auto;
+
+        }
+
+        .btn-n {
+            padding: 8px 30px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .nev-text {
+            display: flex;
+
+        }
+
+        .text-name {
+            margin-left: 30px;
+            font-size: 40px;
+
+        }
+
+        #n1 {
+            color: var(--depth);
+        }
+
+        #n2 {
+            color: var(--primary);
+            margin-left: 0px;
+        }
+
+        .signUp-link {
+            text-decoration: none;
+            color: var(--white);
+
+
+        }
+
+        #signUp-btn {
+            background-color: var(--primary);
+            border: 2px solid var(--primary);
+            border-radius: 6px;
+
+        }
+
+        .login-link {
+            text-decoration: none;
+            color: var(--primary);
+
+        }
+
+        #login-btn {
+            border: 2px solid var(--primary);
+            border-radius: 6px;
+        }
+
+        #signUp-btn:hover {
+            background-color: var(--white);
+        }
+
+        #signUp-btn:hover .signUp-link {
+            color: var(--primary);
+        }
+
+        #login-btn:hover {
+            background-color: var(--primary);
+
+        }
+
+        #login-btn:hover .login-link {
+            color: var(--white);
+        }
+
+        @media screen and (max-width: 1024px) {
+            .nav-container {
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .nav-menu {
+                order: 3;
+                width: 100%;
+                justify-content: center;
+            }
+
+            .nav-btn {
+                order: 2;
+            }
+
+            .nav-text {
+                order: 1;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+                padding: 10px;
+            }
+
+            .nav-text {
+                width: 100%;
+                text-align: center;
+            }
+
+            .text-name {
+                font-size: 35px;
+            }
+
+            .nav-menu {
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            .nav-menu li {
+                width: auto;
+            }
+
+            .nav-link {
+                padding: 8px 15px;
+                font-size: 18px;
+            }
+
+            .nav-btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .btn-n {
+                padding: 8px 25px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .nav-menu {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .nav-menu li {
+                width: 100%;
+                text-align: center;
+            }
+
+            .nav-link {
+                width: 100%;
+                padding: 10px;
+            }
+
+            .nav-btn {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn-n {
+                width: 100%;
+            }
+
+            .text-name {
+                font-size: 28px;
+            }
+        }
+
+        /* Optional: Add smooth transitions */
+        .nav-menu,
+        .nav-btn,
+        .nav-text,
+        .nav-link {
+            transition: all 0.3s ease;
+        }
+
+        /* Optional: Add background to header on mobile */
+        @media screen and (max-width: 768px) {
+            header {
+                background-color: var(--white);
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                position: sticky;
+                top: 0;
+                z-index: 100;
+            }
+
+            .nav-container {
+                margin-top: 5px;
+                margin-bottom: 5px;
+            }
+        }
+
+        /* Fix for very small screens */
+        @media screen and (max-width: 320px) {
+            .text-name {
+                font-size: 24px;
+            }
+
+            .nav-link {
+                font-size: 16px;
+                padding: 6px 10px;
+            }
+
+            .btn-n {
+                padding: 6px 20px;
+                font-size: 14px;
+            }
+        }
+
+
+        /* Contact Container with Enhanced Aesthetic */
+        .container {
+            min-height: 700px;
+            width: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 3rem;
+            padding: 60px 40px;
+            position: relative;
+        }
+
+        /* Glassmorphism Background Effect */
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(0, 171, 228, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        /* Left Side Card - 3D Hover Effect */
+        .left-side {
+            height: 480px;
+            width: 420px;
+            border-radius: 24px;
+            display: flex;
+            flex-direction: column;
+            padding: 40px;
+            color: var(--white);
+            background: linear-gradient(145deg, var(--primary), var(--depth));
+            box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.2), -8px -8px 20px rgba(255, 255, 255, 0.1);
+            transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(0px);
+        }
+
+        /* Animated Gradient Border */
+        .left-side::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #fff, var(--primary), #fff, var(--depth), #fff);
+            border-radius: 26px;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            z-index: -1;
+        }
+
+        .left-side:hover::before {
+            opacity: 0.3;
+        }
+
+        .left-side:hover {
+            transform: translateY(-12px) rotateX(2deg);
+            box-shadow: 25px 30px 50px rgba(0, 0, 0, 0.25);
+        }
+
+        /* Right Side Card - Glassmorphism with Blur Effect */
+        .right-side {
+            /*height: 520px;*/
+            min-height: 520px;
+            width: 580px;
+            border-radius: 28px;
+            display: flex;
+            flex-direction: column;
+            background: rgba(0, 171, 228, 0.85);
+            backdrop-filter: blur(12px);
+            color: var(--white);
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.2);
+            transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Subtle Animated Glow on Right Card */
+        .right-side::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.6s ease;
+            pointer-events: none;
+        }
+
+        .right-side:hover::after {
+            opacity: 0.5;
+            animation: shimmer 1.5s ease;
+        }
+
+        @keyframes shimmer {
+            0% {
+                transform: translate(-30%, -30%) rotate(0deg);
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 0.6;
+            }
+
+            100% {
+                transform: translate(30%, 30%) rotate(180deg);
+                opacity: 0;
+            }
+        }
+
+        .right-side:hover {
+            transform: translateY(-8px) scale(1.01);
+            box-shadow: 0 30px 55px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(16px);
+            background: rgba(0, 171, 228, 0.92);
+        }
+
+        /* Left Side Content Styling */
+        .left-side h1 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .left-side h1::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--white);
+            border-radius: 3px;
+        }
+
+        .location1,
+        .location2,
+        .ph,
+        .hour {
+            font-size: 1rem;
+            margin: 12px 0;
+            opacity: 0.95;
+            letter-spacing: 0.3px;
+        }
+
+        .location2 {
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .ph {
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .phone,
+        .time {
+            margin-top: 20px;
+        }
+
+        .phone h1,
+        .time h1 {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+        }
+
+        /* Right Side Form Styling */
+        .inbox {
+            padding: 35px 40px;
+            font-family: "Ubuntu", sans-serif;
+        }
+
+        .inbox h1 {
+            font-size: 2.2rem;
+            margin-bottom: 25px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .inbox h1::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--white);
+            border-radius: 3px;
+        }
+
+        .inbox form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            margin-top: 20px;
+        }
+
+        .name,
+        .email,
+        .msg {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .name-box,
+        .email-box,
+        .msg-box {
+            padding: 12px 16px;
+            border: none;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.95);
+            color: var(--depth);
+            font-family: "Ubuntu", sans-serif;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            outline: none;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .name-box:focus,
+        .email-box:focus,
+        .msg-box:focus {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            background: var(--white);
+            border: 1px solid var(--primary);
+        }
+
+        .msg-box {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .click {
+            padding: 12px 28px;
+            border: none;
+            border-radius: 40px;
+            background: var(--white);
+            color: var(--primary);
+            font-family: "Ubuntu", sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 10px;
+        }
+        .inbox {
+        padding: 35px 40px 50px; /* increased bottom padding */
+}
+
+        .click:hover {
+            background: var(--depth);
+            color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .click:active {
+            transform: translateY(0px);
+        }
+
+        /* Footer Styles */
+        .footer {
+            background: linear-gradient(135deg, var(--depth) 0%, #003D55 100%);
+            color: #fff;
+            padding: 60px 60px 40px;
+            margin-top: 40px;
+            position: relative;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+
+        .footer-left h1 {
+            font-size: 1.8rem;
+            line-height: 1.3;
+            font-weight: 600;
+        }
+
+        .footer-column h3 {
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        .footer-column p {
+            font-size: 14px;
+            margin-bottom: 10px;
+            color: #ddd;
+            line-height: 1.5;
+        }
+
+        .footer-column a {
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .footer-column a:hover {
+            color: var(--white);
+            text-decoration: underline;
+        }
+
+        .map-link {
+            display: inline-block;
+            margin-top: 10px;
+            font-weight: 500;
+        }
+
+        .follow-heading {
+            margin-top: 0;
+            font-size: 1.3rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .follow-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .follow-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: 0.3s ease;
+        }
+
+        .follow-links a i {
+            width: 24px;
+            font-size: 1.2rem;
+        }
+
+        .follow-links a:hover {
+            opacity: 0.8;
+            transform: translateX(8px);
+            color: var(--primary);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .container {
+                gap: 2rem;
+                padding: 40px 20px;
+            }
+
+            .left-side,
+            .right-side {
+                width: 90%;
+                max-width: 500px;
+            }
+
+            .right-side {
+                width: 90%;
+                max-width: 550px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-wrap: wrap;
+                padding: 0 15px;
+            }
+
+            .nav-menu {
+                margin-left: 0;
+                order: 3;
+                justify-content: center;
+                width: 100%;
+                margin-top: 10px;
+            }
+
+            .nav-btn {
+                margin-right: 15px;
+            }
+
+            .text-name {
+                margin-left: 15px;
+                font-size: 32px;
+            }
+
+            .container {
+                flex-direction: column;
+                padding: 30px 20px;
+                gap: 2rem;
+            }
+
+            .left-side,
+            .right-side {
+                width: 100%;
+                max-width: 480px;
+                height: auto;
+                min-height: 420px;
+            }
+
+            .inbox {
+                padding: 25px 30px;
+            }
+
+            .footer-container {
+                flex-direction: column;
+                gap: 35px;
+            }
+
+            .footer {
+                padding: 40px 30px;
+            }
+
+            .footer-left h1 {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .left-side,
+            .right-side {
+                padding: 25px;
+            }
+
+            .inbox h1 {
+                font-size: 1.8rem;
+            }
+
+            .left-side h1 {
+                font-size: 1.8rem;
+            }
+
+            .name-box,
+            .email-box,
+            .msg-box {
+                padding: 10px 14px;
+            }
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--soft);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--depth);
+        }
+
+        /* Icon Placeholders for Left Side */
+        .loc,
+        .phone,
+        .time {
+            position: relative;
+        }
+
+        .loc h1::before,
+        .phone h1::before,
+        .time h1::before {
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            margin-right: 10px;
+            font-size: 1.3rem;
+        }
+
+        .loc h1::before {
+            content: '\f3c5';
+        }
+
+        .phone h1::before {
+            content: '\f095';
+        }
+
+        .time h1::before {
+            content: '\f017';
+        }
